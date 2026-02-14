@@ -1,0 +1,28 @@
+name: AWS Connection Test for PKACICD
+on: 
+  push:
+    branches: [ main ]
+  workflow_dispatch: # Allows you to run this manually from the Actions tab
+
+permissions:
+  id-token: write # This is MANDATORY for OIDC to work
+  contents: read  # Allows the action to read your repo code
+
+jobs:
+  Verify-AWS-Link:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          # Replace with the ARN you copied from the AWS Console
+          role-to-assume: arn:aws:iam::622778846520:role/GitHubAction-EKS-Deployer
+          aws-region: us-east-1 # Change to your preferred region (e.g., us-west-2)
+
+      - name: Test Identity
+        run: |
+          echo "Successfully authenticated to AWS!"
+          aws sts get-caller-identity
