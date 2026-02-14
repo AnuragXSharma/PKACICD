@@ -3,7 +3,7 @@ terraform {
 
   # This is the "Save Game" location
   backend "s3" {
-    bucket       = "pkacicd-terraform-state-uniqueid" # Use your bucket name here
+    bucket       = "pkacicd-terraform-state" # Use your bucket name here
     key          = "eks/terraform.tfstate"           # Where the file lives in S3
     region       = "us-east-1"
     encrypt      = true
