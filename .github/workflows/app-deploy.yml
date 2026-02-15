@@ -16,7 +16,7 @@ env:
   ECR_REPOSITORY: pka-app
   # Update this to your ACTUAL account ID found in your ECR URL
   AWS_ACCOUNT_ID: "622778846520" 
-  GITOPS_REPO: ${{ github.repository_owner }}/PKAApprepo-config
+  GITOPS_REPO: ${{ github.repository_owner }}/PKAApprepo
 
 jobs:
   build-and-deploy:
