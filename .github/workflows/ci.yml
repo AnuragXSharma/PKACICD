@@ -27,7 +27,7 @@ jobs:
       - name: Build, Tag, and Push
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: pkacicd
+          ECR_REPOSITORY: pka-app
           IMAGE_TAG: ${{ github.sha }} # Uses the commit hash as the version
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
