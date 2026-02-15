@@ -1,4 +1,4 @@
-name: CI Pipeline - PKACICD
+name: CI Pipeline - PKAApp
 on:
   push:
     branches: [ main ]
