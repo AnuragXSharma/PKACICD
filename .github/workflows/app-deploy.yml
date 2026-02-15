@@ -16,7 +16,7 @@ env:
   ECR_REPOSITORY: pka-app
   # Update this to your ACTUAL account ID found in your ECR URL
   AWS_ACCOUNT_ID: "622778846520" 
-  GITOPS_REPO: ${{ github.repository_owner }}/PKAApprepo
+  GITOPS_REPO: ${{ github.repository_owner }}/pka-infra
 
 jobs:
   build-and-deploy:
@@ -52,7 +52,7 @@ jobs:
           
           echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
-      - name: Update GitOps Config Repo
+      - name: Update GitOps Config Repo Pka-infra 
         run: |
           # 1. Clone the config repo using your Personal Access Token (PAT)
           git clone https://${{ secrets.GITOPS_TOKEN }}@github.com/${{ env.GITOPS_REPO }}.git gitops-dir
