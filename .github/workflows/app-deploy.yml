@@ -6,7 +6,7 @@ on:
     paths-ignore:
       - 'terraform/**'
       - 'README.md'
-
+  workflow_dispatch:
 permissions:
   id-token: write   # Required for OIDC authentication to AWS
   contents: read    # Required to checkout the code
