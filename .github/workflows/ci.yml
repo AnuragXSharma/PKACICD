@@ -1,4 +1,4 @@
-name: CI Pipeline - PKAApp
+name: CI Pipeline - PushDockertoECR
 on:
   push:
     branches: [ main ]
